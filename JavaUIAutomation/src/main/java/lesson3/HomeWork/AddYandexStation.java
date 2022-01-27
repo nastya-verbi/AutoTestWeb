@@ -28,7 +28,7 @@ public class AddYandexStation {
         Thread.sleep(1000); //не смогла определиться, к чему можно привязаться по ожиданию
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='textfield9487928366']")));
         driver.findElement(By.xpath("//input[@name='Цена до']")).sendKeys("5000");
-        driver.findElement(By.xpath("//span[contains(text(), 'Цвет красный')]/..")).click();
+        driver.findElement(By.xpath("//span[contains(text(), 'Цвет зеленый')]/..")).click();
         Thread.sleep(1000); //аналогично про ожидания, много элементов
 //        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//article[@data-autotest-id='product-snippet']//span[contains(text(),'лимон')]"))));
         driver.findElement(By.xpath("//span[contains(text(), 'корзину')]/ancestor::button")).click();
