@@ -37,6 +37,5 @@ public class AddYandexStation {
         driver.findElement(By.xpath("//div[@data-auto='modal']//a[@href='/my/cart']")).click();
         Thread.sleep(2000);
         driver.quit();
-
     }
 }
