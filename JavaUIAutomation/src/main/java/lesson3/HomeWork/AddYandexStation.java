@@ -25,12 +25,13 @@ public class AddYandexStation {
         driver.switchTo().window(tab.get(1));
         driver.findElement(By.id("header-search")).sendKeys("яндекс станция");
         driver.findElement(By.xpath("//button[@data-r='search-button']")).click();
-        Thread.sleep(1000); //не смогла определиться, к чему можно привязаться по ожиданию
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='textfield9487928366']")));
-        driver.findElement(By.xpath("//input[@name='Цена до']")).sendKeys("5000");
-        driver.findElement(By.xpath("//span[contains(text(), 'Цвет зеленый')]/..")).click();
-        Thread.sleep(1000); //аналогично про ожидания, много элементов
-//        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//article[@data-autotest-id='product-snippet']//span[contains(text(),'лимон')]"))));
+//        Thread.sleep(1000); //не смогла определиться, к чему можно привязаться по ожиданию
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='Цена до']")));
+        driver.findElement(By.xpath("//input[@name='Цена до']")).sendKeys("6000");
+        driver.findElement(By.xpath("//span[contains(text(), 'Цвет желтый')]/..")).click();
+//        Thread.sleep(1000); //аналогично про ожидания, много элементов
+        wait.until(ExpectedConditions.stalenessOf(driver.findElement
+                (By.xpath("//div[@data-apiary-widget-id=\"/MarketNodeOutOfStockResults42/resultsPaged/searchPartition-0\"]/following-sibling::div"))));
         driver.findElement(By.xpath("//span[contains(text(), 'корзину')]/ancestor::button")).click();
 //        Thread.sleep(1000);
         driver.switchTo().activeElement();
