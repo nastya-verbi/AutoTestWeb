@@ -1,5 +1,6 @@
 package lesson6.HomeWork.YandexMarket;
 
+import io.qameta.allure.Step;
 import lesson6.HomeWork.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,7 @@ public class PopUpAddCart extends BasePage {
     @FindBy (xpath = "//div[@data-auto='modal']//a[@href='/my/cart']")
     private WebElement buttonCart;
 
+    @Step("Добавить товар в корзину")
     public CartPage clickButtonCart() {
         driver.switchTo().activeElement();
         buttonCart.click();

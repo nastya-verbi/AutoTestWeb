@@ -1,5 +1,6 @@
 package lesson6.HomeWork.YandexVideo;
 
+import io.qameta.allure.Step;
 import lesson6.HomeWork.BasePage;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -30,14 +31,17 @@ public class VideoPage extends BasePage {
     private static final String PROGRESS_BAR = "div div.spin2_progress_yes";
     private final String FILM_LIST = "//a[contains(@href, 'video')]/ancestor::div[@class='serp-item__snippet']";
 
+    @Step("Очистить поле поиска")
     public void removeSearchText() {
         buttonRemove.click();
     }
 
+    @Step("Нажать на кнопку поиска")
     public void clickButton() {
         searchButton.click();
     }
 
+    @Step("Найти необходимый фильм в поле поиска")
     public VideoPage findFilm(String nameFilm) {
         removeSearchText();
         searchField.sendKeys(nameFilm);
@@ -46,6 +50,7 @@ public class VideoPage extends BasePage {
         return this;
     }
 
+    @Step("Выбрать фильм из списка")
     public VideoPage clickFirstFilm(String filmName) {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(PROGRESS_BAR)));
         List<WebElement> filmsList = driver.findElements(By.xpath(FILM_LIST));
@@ -53,6 +58,7 @@ public class VideoPage extends BasePage {
         return this;
     }
 
+    @Step("Проверить название фильма")
     public VideoPage checkTitle(String filmName) {
         Assertions.assertEquals(textTitle.getText(), filmName);
         return this;

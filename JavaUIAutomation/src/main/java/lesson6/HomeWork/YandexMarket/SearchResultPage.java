@@ -1,5 +1,6 @@
 package lesson6.HomeWork.YandexMarket;
 
+import io.qameta.allure.Step;
 import lesson6.HomeWork.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,6 +36,7 @@ public class SearchResultPage extends BasePage {
         colorCheckbox.click();
     }
 
+    @Step("Отфильтровать поиск товара по цене и цвету")
     public PopUpAddCart searchNewGoods(String price) {
         inputPrice(price);
         selectColorCheckbox();

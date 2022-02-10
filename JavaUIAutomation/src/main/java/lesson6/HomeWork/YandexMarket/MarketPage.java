@@ -1,5 +1,6 @@
 package lesson6.HomeWork.YandexMarket;
 
+import io.qameta.allure.Step;
 import lesson6.HomeWork.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +22,7 @@ public class MarketPage extends BasePage {
 
     protected static final String INPUT_PRICE_LOCATOR = "//input[@name='Цена до']";
 
-
+    @Step("Ввести наименование товара в строке поиска")
     public SearchResultPage searchGoods(String nameGoods) {
         inputSearch.sendKeys(nameGoods);
         buttonSearch.click();

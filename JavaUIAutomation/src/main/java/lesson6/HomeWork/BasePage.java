@@ -1,5 +1,6 @@
 package lesson6.HomeWork;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,6 +23,7 @@ public class BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Перейти на новую вкладку")
     public void switchToPage(int numberPage) {
         ArrayList<String> tab = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tab.get(numberPage));

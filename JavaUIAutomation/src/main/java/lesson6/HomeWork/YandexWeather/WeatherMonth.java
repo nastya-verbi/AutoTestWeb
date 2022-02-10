@@ -1,5 +1,6 @@
 package lesson6.HomeWork.YandexWeather;
 
+import io.qameta.allure.Step;
 import lesson6.HomeWork.BasePage;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -15,6 +16,7 @@ public class WeatherMonth extends BasePage {
     @FindBy (id = "main_title")
     private WebElement titleText;
 
+    @Step("Проверить правильная ли отображается погода")
     public WeatherMonth checkTitleWeather(String actualTitleText) {
         Assertions.assertEquals(titleText.getText(), actualTitleText);
         return this;

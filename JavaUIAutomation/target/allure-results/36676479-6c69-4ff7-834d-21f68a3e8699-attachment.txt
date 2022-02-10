@@ -1,0 +1,1 @@
+https://yastatic.net/s3/market-static/white-desktop/browser.vendor.763619f.js 0:13035 "You forgot to import \"@yandex-market/mandrel/DevTools/Root\" in the index file of a parent widget or mark it as static."
